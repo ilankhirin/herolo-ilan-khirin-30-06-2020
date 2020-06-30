@@ -1,5 +1,10 @@
+import { Grid } from '@material-ui/core'
 import React from 'react'
+import { AddItemFab } from './AddItemFab'
+
 
 export const BoughtPage = () => {
-    return <div>Bought</div>
+    return <Grid container>
+        <AddItemFab />
+    </Grid>
 }

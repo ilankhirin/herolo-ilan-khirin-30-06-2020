@@ -3,7 +3,7 @@ import DoneOutlineRoundedIcon from '@material-ui/icons/DoneOutlineRounded'
 import React from 'react'
 import { StoreItem } from '../../../models/StoreItem'
 import { getCurrencySymbol } from '../../../utils/getCurrencySymbol'
-import { DeliveyDate } from './DeliveryDate'
+import { DeliveryDate } from './DeliveryDate'
 import { useDispatch, useSelector } from 'react-redux'
 import { setItemRecievedStatus } from '../../../actions/itemsActions'
 import SentimentDissatisfiedRoundedIcon from '@material-ui/icons/SentimentDissatisfiedRounded';
@@ -51,7 +51,7 @@ export const ItemCard = (props: Props) => {
                     <Typography variant='subtitle2'>{priceInPreferredCurrency.toFixed(2)}{getCurrencySymbol(preferredCurrency)}</Typography>
                 </Grid>
                 <Grid item className={classes.date}>
-                    <DeliveyDate dateISO={deliveryDateISO} />
+                    <DeliveryDate dateISO={deliveryDateISO} toColor={!recieved} />
                 </Grid>
             </Grid>
         </CardContent>

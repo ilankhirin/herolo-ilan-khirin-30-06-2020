@@ -1,26 +1,35 @@
-import React from 'react'
+import { Typography } from '@material-ui/core'
 import moment from 'moment'
-import { makeStyles, createStyles, Typography } from '@material-ui/core'
-
-const useStyles = makeStyles(createStyles({
-
-}))
+import React from 'react'
 
 interface Props {
     dateISO: string
     toColor?: boolean
 }
 
-export const DeliveyDate = React.memo((props: Props) => {
-    const { dateISO } = props
+export const DeliveryDate = React.memo((props: Props) => {
+    const { dateISO, toColor } = props
     const date = new Date(dateISO)
     date.setHours(0, 0, 0, 0)
+    const dateUnixTimestamp = date.getTime()
 
     const todaysDate = new Date()
     todaysDate.setHours(0, 0, 0, 0)
+    const todaysDateUnixTimestamp = todaysDate.getTime()
 
-    //TODO: color
+
+    let color
+    if (toColor) {
+        if (dateUnixTimestamp < todaysDateUnixTimestamp) {
+            color = 'red'
+        } else if (dateUnixTimestamp === todaysDateUnixTimestamp) {
+            color = 'orange'
+        } else {
+            color = 'green'
+        }
+    }
+
     const text = moment(date).format('DD-MM-YYYY')
 
-    return <Typography>{text}</Typography>
+    return <Typography style={{ color }}>{text}</Typography>
 })

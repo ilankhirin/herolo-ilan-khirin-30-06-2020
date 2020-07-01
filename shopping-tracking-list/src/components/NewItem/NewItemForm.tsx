@@ -1,7 +1,7 @@
 import { createStyles, Grid, makeStyles, MenuItem, Select, TextField, Theme } from '@material-ui/core'
 import React from 'react'
-import { Currency, currencyTypes } from '../../../models/Currency'
-import { StoreItem } from '../../../models/StoreItem'
+import { Currency, currencyTypes } from '../../models/Currency'
+import { StoreItem } from '../../models/StoreItem'
 import { StoreSelector } from './StoreSelector'
 
 const useStyles = makeStyles((theme: Theme) => createStyles({

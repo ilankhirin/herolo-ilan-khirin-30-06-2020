@@ -7,4 +7,5 @@ export interface StoreItem {
     deliveryDateISO: string
     price: number
     priceCurrency: Currency
+    recieved: boolean
 }

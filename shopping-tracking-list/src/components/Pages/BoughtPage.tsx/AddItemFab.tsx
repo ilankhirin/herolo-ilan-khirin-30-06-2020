@@ -1,7 +1,7 @@
 import { createStyles, Fab, makeStyles, Theme } from '@material-ui/core';
 import AddIcon from '@material-ui/icons/AddRounded';
 import React, { Fragment, useState } from 'react';
-import { AddItemDialog } from './AddItemDialog';
+import { AddItemDialog } from '../../NewItem/AddItemDialog';
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     fab: {

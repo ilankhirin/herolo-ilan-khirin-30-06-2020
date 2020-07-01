@@ -2,6 +2,10 @@ import { Card, CardActions, CardContent, createStyles, Divider, Grid, makeStyles
 import React, { Fragment } from 'react'
 import { StoreItem } from '../../../models/StoreItem'
 import { getCurrencySymbol } from '../../../utils/getCurrencySymbol'
+import { useConvertCurrency } from '../../../utils/useConvertCurrency'
+import { useSelector } from 'react-redux'
+import { AppState } from '../../../store/store'
+import { UserSettings } from '../../../reducers/userSettingsReducer'
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     root: {
@@ -22,9 +26,11 @@ interface Props {
 export const StoreAggregationCard = (props: Props) => {
     const { items, store } = props
     const classes = useStyles()
+    const convertCurrency = useConvertCurrency()
+    const { preferredCurrency } = useSelector<AppState, UserSettings>(x => x.userSettings)
 
-    //TODO: calculate by currency
-    const totalPrice = items.reduce((prev, current) => prev + current.price, 0)
+    const totalPrice = items.reduce((prev, current) => prev + convertCurrency(current.price, current.priceCurrency), 0)
+    const preferredCurrencySymbol = getCurrencySymbol(preferredCurrency)
 
     return <Card className={classes.root} elevation={4}>
         <CardContent classes={{ root: classes.content }}>
@@ -35,8 +41,7 @@ export const StoreAggregationCard = (props: Props) => {
                         <Typography variant='subtitle2'>{x.name}</Typography>
                     </Grid>
                     <Grid item>
-                        {/* TODO: Fix price */}
-                        <Typography variant='caption'>{x.price}{getCurrencySymbol(x.priceCurrency)}</Typography>
+                        <Typography variant='caption'>{convertCurrency(x.price, x.priceCurrency).toFixed(2)}{preferredCurrencySymbol}</Typography>
                     </Grid>
                 </Grid>
             </Fragment>)}
@@ -48,7 +53,7 @@ export const StoreAggregationCard = (props: Props) => {
                     <Typography>Total of {items.length} items</Typography>
                 </Grid>
                 <Grid item>
-                    <Typography>Total price: {totalPrice}</Typography>
+                    <Typography>Total price: {totalPrice.toFixed(2)}{preferredCurrencySymbol}</Typography>
                 </Grid>
             </Grid>
         </CardActions>

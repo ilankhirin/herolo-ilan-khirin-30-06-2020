@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { StoreItem } from '../../../models/StoreItem'
 import { StoreAggregationCard } from './StoreAggregationCard'
 
@@ -28,7 +28,7 @@ export const StoresAggregations = (props: Props) => {
     const { items } = props
     const itemsGroupedByStore = groupItemsByStore(items)
 
-    return <div>
+    return <Fragment>
         {Object.keys(itemsGroupedByStore).map(x => <StoreAggregationCard key={x} store={x} items={itemsGroupedByStore[x]} />)}
-    </div>
+    </Fragment>
 }

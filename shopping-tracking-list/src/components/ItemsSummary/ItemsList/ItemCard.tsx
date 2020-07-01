@@ -4,9 +4,12 @@ import React from 'react'
 import { StoreItem } from '../../../models/StoreItem'
 import { getCurrencySymbol } from '../../../utils/getCurrencySymbol'
 import { DeliveyDate } from './DeliveryDate'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { setItemRecievedStatus } from '../../../actions/itemsActions'
 import SentimentDissatisfiedRoundedIcon from '@material-ui/icons/SentimentDissatisfiedRounded';
+import { useConvertCurrency } from '../../../utils/useConvertCurrency'
+import { AppState } from '../../../store/store'
+import { UserSettings } from '../../../reducers/userSettingsReducer'
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     root: {
@@ -33,16 +36,19 @@ interface Props {
 export const ItemCard = (props: Props) => {
     const { item } = props
     const classes = useStyles()
+    const { preferredCurrency } = useSelector<AppState, UserSettings>(x => x.userSettings)
     const dispatch = useDispatch()
+    const convertCurrency = useConvertCurrency()
     const { id, recieved, name, store, price, priceCurrency, deliveryDateISO } = item
+
+    const priceInPreferredCurrency = convertCurrency(price, priceCurrency)
 
     return <Card className={classes.root} elevation={4}>
         <CardContent>
             <Grid container direction='row' justify='space-between'>
                 <Grid item>
                     <Typography variant='subtitle1'>{name}</Typography>
-                    {/* TODO: Fix currency by user settings */}
-                    <Typography variant='subtitle2'>{price}{getCurrencySymbol(priceCurrency)}</Typography>
+                    <Typography variant='subtitle2'>{priceInPreferredCurrency.toFixed(2)}{getCurrencySymbol(preferredCurrency)}</Typography>
                 </Grid>
                 <Grid item className={classes.date}>
                     <DeliveyDate dateISO={deliveryDateISO} />

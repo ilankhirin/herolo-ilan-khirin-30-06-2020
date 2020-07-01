@@ -6,6 +6,7 @@ interface ExchangeRatesApiResponse {
     rates: CurrencyRates
 }
 
+//TODO: handle error
 export const fetchRatesLoop = async () => {
     const response = await fetch('https://api.exchangeratesapi.io/latest')
     const data = await response.json() as ExchangeRatesApiResponse

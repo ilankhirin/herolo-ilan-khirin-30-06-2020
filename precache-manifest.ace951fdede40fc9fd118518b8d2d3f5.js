@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "90c3f30e8ff690da67e9050c0ab69b01",
+    "revision": "e04fcc42b02c2351e916a4663c0bfbcf",
     "url": "/herolo-ilan-khirin-30-06-2020/index.html"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/herolo-ilan-khirin-30-06-2020/static/js/2.87743487.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "166045d92198c43ef497",
-    "url": "/herolo-ilan-khirin-30-06-2020/static/js/main.6caabc9a.chunk.js"
+    "revision": "92a4fb54fc359750480e",
+    "url": "/herolo-ilan-khirin-30-06-2020/static/js/main.69051bcb.chunk.js"
   },
   {
     "revision": "91d4d343a77192ae4d2d",

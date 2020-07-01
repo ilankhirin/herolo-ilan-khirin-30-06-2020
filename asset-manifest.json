@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/herolo-ilan-khirin-30-06-2020/static/js/main.6caabc9a.chunk.js",
-    "main.js.map": "/herolo-ilan-khirin-30-06-2020/static/js/main.6caabc9a.chunk.js.map",
+    "main.js": "/herolo-ilan-khirin-30-06-2020/static/js/main.69051bcb.chunk.js",
+    "main.js.map": "/herolo-ilan-khirin-30-06-2020/static/js/main.69051bcb.chunk.js.map",
     "runtime-main.js": "/herolo-ilan-khirin-30-06-2020/static/js/runtime-main.6317d756.js",
     "runtime-main.js.map": "/herolo-ilan-khirin-30-06-2020/static/js/runtime-main.6317d756.js.map",
     "static/js/2.87743487.chunk.js": "/herolo-ilan-khirin-30-06-2020/static/js/2.87743487.chunk.js",
     "static/js/2.87743487.chunk.js.map": "/herolo-ilan-khirin-30-06-2020/static/js/2.87743487.chunk.js.map",
     "index.html": "/herolo-ilan-khirin-30-06-2020/index.html",
-    "precache-manifest.a3bdc5056ee68d2d38b96e7c4ffcb759.js": "/herolo-ilan-khirin-30-06-2020/precache-manifest.a3bdc5056ee68d2d38b96e7c4ffcb759.js",
+    "precache-manifest.ace951fdede40fc9fd118518b8d2d3f5.js": "/herolo-ilan-khirin-30-06-2020/precache-manifest.ace951fdede40fc9fd118518b8d2d3f5.js",
     "service-worker.js": "/herolo-ilan-khirin-30-06-2020/service-worker.js",
     "static/js/2.87743487.chunk.js.LICENSE.txt": "/herolo-ilan-khirin-30-06-2020/static/js/2.87743487.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.6317d756.js",
     "static/js/2.87743487.chunk.js",
-    "static/js/main.6caabc9a.chunk.js"
+    "static/js/main.69051bcb.chunk.js"
   ]
 }

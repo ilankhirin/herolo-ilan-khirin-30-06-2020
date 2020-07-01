@@ -15,12 +15,12 @@ const useStyles = makeStyles((theme: Theme) =>
 
 const getTitle = (location: string) => {
     switch (location) {
-        case '/bought':
-            return 'Bought'
-        case '/':
         case '/recieved':
-        default:
             return 'Recieved'
+        case '/bought':
+        case '/':
+        default:
+            return 'Bought'
     }
 }
 

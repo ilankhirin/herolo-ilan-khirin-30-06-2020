@@ -1,5 +1,6 @@
 import React from 'react'
+import { ItemsSummary } from '../../ItemsSummary/ItemsSummary'
 
 export const RecievedPage = () => {
-    return <div>Recieved</div>
+    return <ItemsSummary />
 }

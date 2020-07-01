@@ -8,11 +8,11 @@ function App() {
   return <Router>
     <MainAppBar />
     <Switch >
-      <Route path='/bought'>
-        <BoughtPage />
-      </Route>
-      <Route path={['/', '/recieved']}>
+      <Route path='/recieved'>
         <RecievedPage />
+      </Route>
+      <Route path={['/', '/bought']}>
+        <BoughtPage />
       </Route>
     </Switch>
   </Router>

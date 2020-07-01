@@ -2,7 +2,7 @@ import { Card, CardActions, CardContent, createStyles, Divider, Grid, makeStyles
 import React, { Fragment } from 'react'
 import { StoreItem } from '../../../models/StoreItem'
 import { getCurrencySymbol } from '../../../utils/getCurrencySymbol'
-import { useConvertCurrency } from '../../../utils/useConvertCurrency'
+import { useConvertCurrency } from '../../../custom-hooks/useConvertCurrency'
 import { useSelector } from 'react-redux'
 import { AppState } from '../../../store/store'
 import { UserSettings } from '../../../reducers/userSettingsReducer'

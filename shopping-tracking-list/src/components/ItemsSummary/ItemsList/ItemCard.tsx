@@ -7,7 +7,7 @@ import { DeliveyDate } from './DeliveryDate'
 import { useDispatch, useSelector } from 'react-redux'
 import { setItemRecievedStatus } from '../../../actions/itemsActions'
 import SentimentDissatisfiedRoundedIcon from '@material-ui/icons/SentimentDissatisfiedRounded';
-import { useConvertCurrency } from '../../../utils/useConvertCurrency'
+import { useConvertCurrency } from '../../../custom-hooks/useConvertCurrency'
 import { AppState } from '../../../store/store'
 import { UserSettings } from '../../../reducers/userSettingsReducer'
 

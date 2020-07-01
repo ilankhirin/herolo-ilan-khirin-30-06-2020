@@ -1,7 +1,7 @@
 import { TextField } from '@material-ui/core';
 import Autocomplete, { createFilterOptions } from '@material-ui/lab/Autocomplete';
 import React, { useMemo } from 'react';
-import { groupItemsByStore } from '../../utils/useGroupItemsByStore';
+import { groupItemsByStore } from '../../custom-hooks/useGroupItemsByStore';
 import { useSelector } from 'react-redux';
 import { AppState } from '../../store/store';
 import { ItemsState } from '../../reducers/itemsReducer';

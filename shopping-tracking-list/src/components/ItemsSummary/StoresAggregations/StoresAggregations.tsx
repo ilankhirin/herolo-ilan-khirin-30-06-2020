@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import { StoreItem } from '../../../models/StoreItem'
-import { useGroupItemsByStore } from '../../../utils/useGroupItemsByStore'
+import { useGroupItemsByStore } from '../../../custom-hooks/useGroupItemsByStore'
 import { StoreAggregationCard } from './StoreAggregationCard'
 
 interface Props {

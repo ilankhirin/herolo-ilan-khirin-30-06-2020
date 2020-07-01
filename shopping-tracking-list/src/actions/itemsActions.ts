@@ -11,3 +11,17 @@ export const addNewItem = (item: StoreItem): AddNewItemAction => ({
     type: ADD_NEW_ITEM,
     item
 })
+
+
+export const SET_ITEM_RECIEVED_STATUS = 'SET_ITEM_RECIEVED_STATUS'
+
+export interface SetItemRecievedStatusAction extends Action<typeof SET_ITEM_RECIEVED_STATUS> {
+    itemId: string
+    recieved: boolean
+}
+
+export const setItemRecievedStatus = (itemId: string, recieved: boolean): SetItemRecievedStatusAction => ({
+    type: SET_ITEM_RECIEVED_STATUS,
+    itemId,
+    recieved
+})

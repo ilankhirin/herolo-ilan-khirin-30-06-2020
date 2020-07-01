@@ -4,6 +4,7 @@ import TabPanel from '@material-ui/lab/TabPanel';
 import React, { useState } from 'react';
 import { ItemsList } from './ItemsList';
 import { StoresAggregations } from './StoresAggregations';
+import { StoreItem } from '../../models/StoreItem';
 
 const useStyles = makeStyles((theme: Theme) => ({
     root: {
@@ -16,9 +17,15 @@ const STORE_AGGREGATION_TAB = 'stores-aggregations'
 
 type TabValue = typeof LIST_TAB | typeof STORE_AGGREGATION_TAB
 
-export const ItemsSummary = () => {
+interface Props {
+    items: StoreItem[]
+}
+
+export const ItemsSummary = (props: Props) => {
+    const { items } = props
     const [tabValue, setTabValue] = useState<TabValue>('list')
     const classes = useStyles()
+    const orderedByDeliveryDate = items.sort((a, b) => new Date(a.deliveryDateISO).getTime() - new Date(b.deliveryDateISO).getTime())
 
     return <div className={classes.root}>
         <TabContext value={tabValue}>
@@ -29,7 +36,7 @@ export const ItemsSummary = () => {
                 </Tabs>
             </AppBar>
             <TabPanel value={LIST_TAB}>
-                <ItemsList />
+                <ItemsList items={orderedByDeliveryDate} />
             </TabPanel>
             <TabPanel value={STORE_AGGREGATION_TAB}>
                 <StoresAggregations />

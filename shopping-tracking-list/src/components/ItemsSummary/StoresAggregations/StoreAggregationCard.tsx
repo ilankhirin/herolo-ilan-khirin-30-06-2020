@@ -1,6 +1,6 @@
+import { Card, CardActions, CardContent, createStyles, Divider, Grid, makeStyles, Theme, Typography } from '@material-ui/core'
 import React, { Fragment } from 'react'
 import { StoreItem } from '../../../models/StoreItem'
-import { Card, makeStyles, Theme, createStyles, CardContent, Typography, Grid, Divider, Paper, CardActions } from '@material-ui/core'
 import { getCurrencySymbol } from '../../../utils/getCurrencySymbol'
 
 const useStyles = makeStyles((theme: Theme) => createStyles({

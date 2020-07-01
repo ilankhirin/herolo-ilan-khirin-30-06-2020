@@ -1,11 +1,11 @@
 import { Button, Card, CardActions, CardContent, createStyles, Grid, makeStyles, Theme, Typography } from '@material-ui/core'
 import DoneOutlineRoundedIcon from '@material-ui/icons/DoneOutlineRounded'
 import React from 'react'
-import { StoreItem } from '../../models/StoreItem'
-import { getCurrencySymbol } from '../../utils/getCurrencySymbol'
+import { StoreItem } from '../../../models/StoreItem'
+import { getCurrencySymbol } from '../../../utils/getCurrencySymbol'
 import { DeliveyDate } from './DeliveryDate'
 import { useDispatch } from 'react-redux'
-import { setItemRecievedStatus } from '../../actions/itemsActions'
+import { setItemRecievedStatus } from '../../../actions/itemsActions'
 import SentimentDissatisfiedRoundedIcon from '@material-ui/icons/SentimentDissatisfiedRounded';
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
@@ -36,7 +36,7 @@ export const ItemCard = (props: Props) => {
     const dispatch = useDispatch()
     const { id, recieved, name, store, price, priceCurrency, deliveryDateISO } = item
 
-    return <Card className={classes.root} elevation={5}>
+    return <Card className={classes.root} elevation={4}>
         <CardContent>
             <Grid container direction='row' justify='space-between'>
                 <Grid item>

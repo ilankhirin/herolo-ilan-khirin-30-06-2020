@@ -1,6 +1,6 @@
 import { GridList } from '@material-ui/core'
 import React from 'react'
-import { StoreItem } from '../../models/StoreItem'
+import { StoreItem } from '../../../models/StoreItem'
 import { ItemCard } from './ItemCard'
 
 interface Props {

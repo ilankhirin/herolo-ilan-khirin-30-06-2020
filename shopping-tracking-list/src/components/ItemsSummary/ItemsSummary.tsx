@@ -2,8 +2,8 @@ import { AppBar, makeStyles, Tab, Tabs, Theme } from '@material-ui/core';
 import TabContext from '@material-ui/lab/TabContext';
 import TabPanel from '@material-ui/lab/TabPanel';
 import React, { useState } from 'react';
-import { ItemsList } from './ItemsList';
-import { StoresAggregations } from './StoresAggregations';
+import { ItemsList } from './ItemsList/ItemsList';
+import { StoresAggregations } from './StoresAggregations/StoresAggregations';
 import { StoreItem } from '../../models/StoreItem';
 
 const useStyles = makeStyles((theme: Theme) => ({
@@ -39,7 +39,7 @@ export const ItemsSummary = (props: Props) => {
                 <ItemsList items={orderedByDeliveryDate} />
             </TabPanel>
             <TabPanel value={STORE_AGGREGATION_TAB}>
-                <StoresAggregations />
+                <StoresAggregations items={orderedByDeliveryDate} />
             </TabPanel>
         </TabContext>
     </div >

@@ -1,9 +1,9 @@
-import React, { Fragment } from 'react'
-import { useSelector } from 'react-redux'
-import { AppState } from '../../store/store'
-import { AlertsState } from '../../reducers/alertsReducer'
+import { createStyles, makeStyles, Theme } from '@material-ui/core';
 import { Alert, AlertTitle } from '@material-ui/lab';
-import { makeStyles, Theme, createStyles } from '@material-ui/core';
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { AlertsState } from '../../reducers/alertsReducer';
+import { AppState } from '../../store/store';
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     root: {

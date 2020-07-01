@@ -16,7 +16,8 @@ export const fetchRatesLoop = async () => {
     const { dispatch } = store
 
     try {
-        const response = await fetch('https://api.exchangeratesapi.io/latest')
+        const url = process.env.REACT_APP_EXCHANGE_RATES_URL as string
+        const response = await fetch(url)
         const data = await response.json() as ExchangeRatesApiResponse
 
         if (checkIfFetchRatesAlertIsPresent()) {
@@ -30,6 +31,6 @@ export const fetchRatesLoop = async () => {
         }
     }
 
-    //TODO: set to be configurable
-    setTimeout(fetchRatesLoop, 3 * 1000)
+    const fetchInterval = Number(process.env.REACT_APP_EXCHANGE_RATES_API_FETCH_INTERVAL_SECONDS) * 1000
+    setTimeout(fetchRatesLoop, fetchInterval)
 }

@@ -3,13 +3,16 @@ import logger from "redux-logger";
 import { persistReducer, persistStore } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import { UserSettings, userSettingsReducer } from "../reducers/userSettingsReducer";
+import { CurrencyRatesState, currencyRatesReducer } from "../reducers/currencyRatesReducer";
 
-interface AppState {
-    userSettings: UserSettings
+export interface AppState {
+    userSettings: UserSettings,
+    currencyRates: CurrencyRatesState,
 }
 
 const rootReducer = combineReducers<AppState>({
-    userSettings: userSettingsReducer
+    userSettings: userSettingsReducer,
+    currencyRates: currencyRatesReducer,
 })
 
 const persistConfig = {

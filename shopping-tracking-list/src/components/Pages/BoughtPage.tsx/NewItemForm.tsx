@@ -1,10 +1,15 @@
-import { Grid, TextField, makeStyles, Theme, createStyles } from '@material-ui/core'
+import { createStyles, Grid, makeStyles, MenuItem, Select, TextField, Theme } from '@material-ui/core'
 import React from 'react'
+import { Currency, currencyTypes } from '../../../models/Currency'
 import { StoreItem } from '../../../models/StoreItem'
+import { StoreSelector } from './StoreSelector'
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     field: {
         marginTop: theme.spacing(2),
+    },
+    currencySelector: {
+        marginLeft: theme.spacing(1)
     }
 }))
 
@@ -18,23 +23,29 @@ export const NewItemForm = (props: Props) => {
     const classes = useStyles()
 
     return <Grid container direction='column'>
-        <TextField label='Name' variant='outlined' value={storeItem?.name} onChange={e => onChange({ ...storeItem, name: e.target.value })} />
-        {/* TODO: Autocomplete store */}
-        <TextField classes={{ root: classes.field }}
-            label='Store'
-            variant='outlined' />
-        <TextField classes={{ root: classes.field }}
-            label='Price'
-            variant='outlined'
-            type='number'
-            value={storeItem?.price}
-            onChange={e => onChange({ ...storeItem, price: Number(e.target.value) })} />
+        <TextField label='Name' variant='outlined' value={storeItem.name} onChange={e => onChange({ name: e.target.value })} />
+        <StoreSelector value={storeItem.store}
+            classes={{ root: classes.field }}
+            onChange={store => onChange({ store: store ?? '' })} />
+        <Grid container className={classes.field} item direction='row'>
+            <TextField classes={{}}
+                label='Price'
+                variant='outlined'
+                type='number'
+                value={storeItem.price}
+                onChange={e => onChange({ price: Number(e.target.value) })} />
+            <Select className={classes.currencySelector}
+                value={storeItem.priceCurrency}
+                onChange={x => onChange({ priceCurrency: x.target.value as Currency })}>
+                {currencyTypes.map(x => <MenuItem value={x} key={x}>{x}</MenuItem>)}
+            </Select>
+        </Grid>
         <TextField classes={{ root: classes.field }} label='Estimated Delivery Date'
             type='date'
             variant='outlined'
             InputLabelProps={{
                 shrink: true,
             }}
-            onChange={e => onChange({ ...storeItem, deliveryDateISO: new Date(e.target.value).toISOString() })} />
+            onChange={e => onChange({ deliveryDateISO: new Date(e.target.value).toISOString() })} />
     </Grid>
 }

@@ -1,5 +1,5 @@
 import { Action } from "redux";
-import { Currency } from "../reducers/userSettingsReducer";
+import { Currency } from "../models/Currency";
 
 export const SET_USER_PREFERRED_CURRENCY = 'SET_USER_PREFERRED_CURRENCY'
 

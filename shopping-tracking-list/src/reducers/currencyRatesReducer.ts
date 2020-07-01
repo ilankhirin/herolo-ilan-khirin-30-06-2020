@@ -1,6 +1,6 @@
-import { Currency } from "./userSettingsReducer";
 import { Action } from "redux";
 import { UPDATE_CURRENCY_RATES, UpdateCurrencyRatesAction } from "../actions/currencyRatesActions";
+import { Currency } from "../models/Currency";
 
 export type CurrencyRates = Record<Currency, number>
 

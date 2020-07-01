@@ -1,7 +1,6 @@
 import { Action } from 'redux'
 import { SET_USER_PREFERRED_CURRENCY, SetUserPreferredCurrenyAction } from '../actions/userSettingsActions'
-
-export type Currency = 'USD' | 'ILS'
+import { Currency } from '../models/Currency'
 
 export interface UserSettings {
     preferredCurrency: Currency

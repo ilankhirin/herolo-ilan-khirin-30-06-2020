@@ -14,5 +14,5 @@ export const fetchRatesLoop = async () => {
     dispatch(updateCurrencyRates(data.rates))
 
     //TODO: set to be configurable
-    setTimeout(fetchRatesLoop, 10 * 1000)
+    setTimeout(fetchRatesLoop, 120 * 1000)
 }

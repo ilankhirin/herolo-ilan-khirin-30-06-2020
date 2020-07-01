@@ -30,6 +30,6 @@ export const AddItemFab = (props: Props) => {
             <AddIcon className={classes.fabIcon} />
             Add Item
         </Fab>
-        <AddItemDialog open={dialogOpen} onClose={closeDialog} />
+        {dialogOpen && <AddItemDialog open={dialogOpen} onClose={closeDialog} />}
     </Fragment>
 }

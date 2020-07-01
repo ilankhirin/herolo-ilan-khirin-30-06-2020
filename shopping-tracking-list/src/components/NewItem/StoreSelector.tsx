@@ -38,8 +38,14 @@ export const StoreSelector = (props: Props) => {
             if (filtered.length) {
                 return filtered
             } else {
-                return [params.inputValue]
+                const firstTimeAddingAnItem = !stores.length && !params.inputValue
+                if (firstTimeAddingAnItem) {
+                    return ['Start typing to add a new store']
+                } else {
+                    return [params.inputValue]
+                }
             }
+
         }}
         renderInput={(params) => <TextField {...params} classes={classes} label="Select Store" variant='outlined' />}
         freeSolo />

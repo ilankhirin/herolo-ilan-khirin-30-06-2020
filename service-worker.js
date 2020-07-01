@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/herolo-ilan-khirin-30-06-2020/precache-manifest.001aabf71418bd2952b31b340be3e5bc.js"
+  "/herolo-ilan-khirin-30-06-2020/precache-manifest.a3bdc5056ee68d2d38b96e7c4ffcb759.js"
 );
 
 self.addEventListener('message', (event) => {

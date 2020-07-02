@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "abe34c70041055e8334b1fb94f07e106",
+    "revision": "150c6258b43e57ad3bed0d9b657b89fd",
     "url": "/herolo-ilan-khirin-30-06-2020/index.html"
   },
   {

@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
         marginBottom: 'auto',
         marginLeft: theme.spacing(1)
     },
-    deliveredIcon: {
+    actionIcon: {
         marginLeft: theme.spacing(1)
     }
 }))
@@ -64,12 +64,12 @@ export const ItemCard = (props: Props) => {
                     {recieved ?
                         <Button variant='outlined' onClick={() => dispatch(setItemRecievedStatus(id, false))}>
                             Still waiting
-                            <SentimentDissatisfiedRoundedIcon className={classes.deliveredIcon} />
+                            <SentimentDissatisfiedRoundedIcon className={classes.actionIcon} />
                         </Button>
                         :
                         <Button variant='outlined' onClick={() => dispatch(setItemRecievedStatus(id, true))}>
                             Recieved
-                            <DoneOutlineRoundedIcon className={classes.deliveredIcon} />
+                            <DoneOutlineRoundedIcon className={classes.actionIcon} />
                         </Button>}
                 </Grid>
             </Grid>

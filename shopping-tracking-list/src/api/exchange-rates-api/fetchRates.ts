@@ -16,7 +16,10 @@ export const fetchRatesLoop = async () => {
     const { dispatch } = store
 
     try {
-        const url = process.env.REACT_APP_EXCHANGE_RATES_URL as string
+        const url = process.env.REACT_APP_EXCHANGE_RATES_URL
+        if (!url) {
+            throw new Error("Exchange rates api isn't defined")
+        }
         const response = await fetch(url)
         const data = await response.json() as ExchangeRatesApiResponse
 

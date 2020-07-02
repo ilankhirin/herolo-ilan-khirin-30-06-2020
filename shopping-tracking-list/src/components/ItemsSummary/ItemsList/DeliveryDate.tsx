@@ -17,7 +17,6 @@ export const DeliveryDate = React.memo((props: Props) => {
     todaysDate.setHours(0, 0, 0, 0)
     const todaysDateUnixTimestamp = todaysDate.getTime()
 
-
     let color
     if (toColor) {
         if (dateUnixTimestamp < todaysDateUnixTimestamp) {

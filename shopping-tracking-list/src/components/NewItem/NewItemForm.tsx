@@ -28,8 +28,7 @@ export const NewItemForm = (props: Props) => {
             classes={{ root: classes.field }}
             onChange={store => onChange({ store: store ?? '' })} />
         <Grid container className={classes.field} item direction='row'>
-            <TextField classes={{}}
-                label='Price'
+            <TextField label='Price'
                 variant='outlined'
                 type='number'
                 value={storeItem.price}
